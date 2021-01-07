@@ -1,6 +1,6 @@
 {
   "name": "@alimd/1db",
-  "version": "3.0.0-beta",
+  "version": "3.0.0",
   "description": "Supper Fast and Simple NoSQL JSON Based Database with Memory Cache",
   "author": "Ali Mihandoost <alimihandoost@gmail.com>",
   "main": "index.js",
@@ -12,15 +12,16 @@
   "keywords": ["database", "db", "nodejs", "typescript", "javascript", "ecmascript", "json"],
   "scripts": {
     "c": "yarn clean",
-    "clean": "del-cli .tsbuildinfo dist",
+    "clean": "del-cli .tsbuildinfo *.js *.d.ts",
     "b": "yarn build",
     "lint": "tslint -c tslint.json -p tsconfig.json",
-    "build": "npm-run-all --serial clean build:ts lint",
+    "build": "npm-run-all --serial clean build:ts",
     "build:ts": "tsc --build",
     "s": "yarn serve",
-    "serve": "nodemon --inspect dist/demo.js",
+    "serve": "nodemon --inspect demo.js",
     "w": "yarn watch",
-    "watch": "npm-run-all --parallel serve \"build:ts --watch --preserveWatchOutput\""
+    "watch": "npm-run-all --parallel serve \"build:ts --watch --preserveWatchOutput\"",
+    "prepare": "yarn build"
   },
   "dependencies": {
     "debug": "^4.3.1",

@@ -1,1 +1,1 @@
-export * from './1db';
+export * from './1db.js';
